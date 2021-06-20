@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace UdemyNLayerProject.Core.Entity
+namespace UdemyNLayerProject.Core.Entities
 {
    internal class Category
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UdemyNLayerProject.Core.Entity
+namespace UdemyNLayerProject.Core.Entities
 {
     class Product
     {
