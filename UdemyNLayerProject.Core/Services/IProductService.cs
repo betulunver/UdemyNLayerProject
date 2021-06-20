@@ -1,14 +1,16 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using UdemyNLayerProject.Core.Entities;
 
-namespace UdemyNLayerProject.Core.Repositories
+namespace UdemyNLayerProject.Core.Services
 {
-    public interface IProductRepository:IRepository<Product>
+    interface IProductService:IService<Product>
     {
+        //db ile ilgili değil iç metot
+        //bool ControlInnerBarcode(Product product)
         Task<Product> GetwithCategoryByProductId(int productId);
+
     }
 }

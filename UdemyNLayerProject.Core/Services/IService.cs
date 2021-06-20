@@ -4,9 +4,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyNLayerProject.Core.Repositories
+namespace UdemyNLayerProject.Core.Services
 {
-   public interface IRepository<TEntity> where TEntity:class
+    public interface IService<TEntity> where TEntity:class
     {
         Task<TEntity> GetByIsAsync(int Id);
         Task<IEnumerable<TEntity>> GetAllAsync();
