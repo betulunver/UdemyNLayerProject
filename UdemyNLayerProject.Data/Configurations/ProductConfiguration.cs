@@ -7,7 +7,7 @@ using UdemyNLayerProject.Core.Entities;
 
 namespace UdemyNLayerProject.Data.Configurations
 {
-    class ProductConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {

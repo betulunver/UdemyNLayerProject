@@ -7,7 +7,7 @@ using UdemyNLayerProject.Core.Entities;
 
 namespace UdemyNLayerProject.Data.Seeds
 {
-    class ProductSeed : IEntityTypeConfiguration<Product>
+    public class ProductSeed : IEntityTypeConfiguration<Product>
     {
         private readonly int[] _Ids;
         public ProductSeed(int[] Ids)

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +31,11 @@ namespace UdemyNLayerProject.API
         {
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), o =>
+                {
+                    o.MigrationsAssembly("UdemyNLayerProject.Data");
+                    //tüm seed dosyaları context dosyası burda olduğu için migrations esnasında belirttik.
+                });
             });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();

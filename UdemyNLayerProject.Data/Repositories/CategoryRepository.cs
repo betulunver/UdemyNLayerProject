@@ -8,7 +8,7 @@ using UdemyNLayerProject.Core.Repositories;
 
 namespace UdemyNLayerProject.Data.Repositories
 {
-    class CategoryRepository : Repository<Category>, ICategoryRepository
+    public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         private AppDbContext _appDbContext { get => _context as AppDbContext; }
 

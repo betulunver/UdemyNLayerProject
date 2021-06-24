@@ -7,7 +7,7 @@ using UdemyNLayerProject.Core.Entities;
 
 namespace UdemyNLayerProject.Data.Seeds
 {
-    class CategorySeed : IEntityTypeConfiguration<Category>
+    public class CategorySeed : IEntityTypeConfiguration<Category>
     {
         private readonly int[] _Ids;
         public CategorySeed(int[] Ids)
