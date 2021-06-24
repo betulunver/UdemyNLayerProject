@@ -11,11 +11,11 @@ namespace UdemyNLayerProject.Data.Repositories
     public class ProductRepository : Repository<Product>, IProductRepository
     {
         private AppDbContext appDbContext { get => _context as AppDbContext; }
-        public ProductRepository(DbContext context) : base(context)
+        public ProductRepository(AppDbContext context) : base(context)
         {
         }
 
-        public async Task<Product> GetwithCategoryByProductId(int productId)
+        public async Task<Product> GetWithCategoryByProductId(int productId)
         {
             return await appDbContext.Products.Include(x => x.Category).SingleOrDefaultAsync(x=>x.Id==productId);
         }

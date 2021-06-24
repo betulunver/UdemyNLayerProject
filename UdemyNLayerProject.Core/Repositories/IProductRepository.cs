@@ -9,6 +9,6 @@ namespace UdemyNLayerProject.Core.Repositories
 {
     public interface IProductRepository:IRepository<Product>
     {
-        Task<Product> GetwithCategoryByProductId(int productId);
+        Task<Product> GetWithCategoryByProductId(int productId);
     }
 }

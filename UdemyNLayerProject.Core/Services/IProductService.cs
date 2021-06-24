@@ -6,11 +6,11 @@ using UdemyNLayerProject.Core.Entities;
 
 namespace UdemyNLayerProject.Core.Services
 {
-    interface IProductService:IService<Product>
+    public interface IProductService:IService<Product>
     {
         //db ile ilgili değil iç metot
         //bool ControlInnerBarcode(Product product)
-        Task<Product> GetwithCategoryByProductId(int productId);
+        Task<Product> GetWithCategoryByProductId(int productId);
 
     }
 }
