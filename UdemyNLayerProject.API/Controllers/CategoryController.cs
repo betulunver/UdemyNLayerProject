@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UdemyNLayerProject.API.DTOs;
+using UdemyNLayerProject.Core.Entities;
 using UdemyNLayerProject.Core.Services;
 
 namespace UdemyNLayerProject.API.Controllers
@@ -33,6 +34,31 @@ namespace UdemyNLayerProject.API.Controllers
         {
             var category = await _categoryService.GetByIdAsync(id);
             return Ok(_mapper.Map<CategoryDto>(category));
+        }
+        [HttpPost]
+        public async Task<IActionResult> Save(CategoryDto categoryDto)
+        {
+            var category = await _categoryService.AddAsync(_mapper.Map<Category>(categoryDto));
+            return Created(string.Empty, _mapper.Map<CategoryDto>(category));
+        }
+        [HttpPut]
+        public IActionResult Update(CategoryDto categoryDto)
+        {
+            var category = _categoryService.Update(_mapper.Map<Category>(categoryDto));
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public IActionResult Remove(int id)
+        {
+            var category = _categoryService.GetByIdAsync(id).Result;
+            _categoryService.Remove(category);
+            return NoContent();
+        }
+        [HttpGet("{id}/products")]
+        public async Task<IActionResult> GetWithProductsById(int id)
+        {
+            var category =await  _categoryService.GetWithProductsByIdAsync(id);
+            return Ok(_mapper.Map<CategoryWithProductDto>(category));
         }
     }
 }
